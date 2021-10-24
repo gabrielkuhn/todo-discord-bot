@@ -23,7 +23,11 @@ const list: ICommand = {
       .setImage('https://i.imgur.com/MqGBqZs.gif')
       .setDescription(
         list.listItens
-          .map((listItem, index) => `${index + 1}. ${listItem.item}`)
+          .map((listItem, index) =>
+            listItem.finishedAt
+              ? `~~${index + 1}. ${listItem.item}~~`
+              : `${index + 1}. ${listItem.item}`
+          )
           .join('\n')
       )
 
