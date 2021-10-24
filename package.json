@@ -1,0 +1,31 @@
+{
+  "name": "todo-discord-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node -r dotenv/config ./dist/index.js",
+    "deploy:dev": "node -r dotenv/config ./dist/scripts/deployCommands.js",
+    "deploy:global": "node -r dotenv/config ./dist/scripts/deployGlobalCommands.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/builders": "^0.6.0",
+    "@discordjs/rest": "^0.1.0-canary.0",
+    "date-fns": "^2.25.0",
+    "discord-api-types": "^0.23.1",
+    "discord.js": "^13.1.0",
+    "dotenv": "^10.0.0",
+    "mongoose": "^6.0.8"
+  },
+  "devDependencies": {
+    "@types/node": "^16.10.2",
+    "typescript": "^4.4.3"
+  },
+  "engines": {
+    "node": ">=16.10.0"
+  }
+}
