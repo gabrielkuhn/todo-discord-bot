@@ -34,7 +34,15 @@ const done: ICommand = {
       )
     }
 
+    if (listItem.finishedAt) {
+      return interaction.reply(
+        'Esse item já está marcado como feito. Ta maluco é?'
+      )
+    }
+
     listItem.finishedAt = interaction.createdAt
+
+    await list.save()
 
     const responseEmbed = new MessageEmbed()
       .setColor('#FDB9FC')
