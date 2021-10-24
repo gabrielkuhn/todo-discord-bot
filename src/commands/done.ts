@@ -47,7 +47,7 @@ const done: ICommand = {
     const responseEmbed = new MessageEmbed()
       .setColor('#FDB9FC')
       .setTitle(
-        `${interaction.user.username} marcou um item como feito como feito. 🎉🎉✨🎈`
+        `${interaction.user.username} marcou um item como feito. 🎉🎉✨🎈`
       )
       .setDescription(`• ${listItem.item}`)
 
