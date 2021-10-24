@@ -1,6 +1,8 @@
 # todo-discord-bot
 This is a Node.js bot for creating a server todo list shared with all server members. It was built using Typescript, Mongoose and the [Discord.js API](https://github.com/discordjs/discord.js).
 
+![bot-usage](https://github.com/gabrielkuhn/todo-discord-bot/blob/main/.github/usage.gif)
+
 ## Considerations:
 1. The bot was builded for a very especific use-case in a private server of mine. 
 It is lacking features that are crucial for production bot running on multiple servers. That being said, i don't recommend running this bot in a production environment. There are multiple other better maintened and rich in features bots out there.
