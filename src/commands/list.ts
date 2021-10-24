@@ -25,7 +25,7 @@ const list: ICommand = {
         list.listItens
           .map((listItem, index) =>
             listItem.finishedAt
-              ? `~~${index + 1}. ${listItem.item}~~`
+              ? `~~${index + 1}. ${listItem.item}~~✓`
               : `${index + 1}. ${listItem.item}`
           )
           .join('\n')
