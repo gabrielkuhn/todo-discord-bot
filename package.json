@@ -1,11 +1,12 @@
 {
   "name": "todo-discord-bot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
     "start": "node -r dotenv/config ./dist/index.js",
+    "dev": "ts-node-dev -r dotenv/config --debug --respawn --transpile-only --exit-child src/index.ts",
     "deploy:dev": "node -r dotenv/config ./dist/scripts/deployCommands.js",
     "deploy:global": "node -r dotenv/config ./dist/scripts/deployGlobalCommands.js"
   },
@@ -23,6 +24,7 @@
   },
   "devDependencies": {
     "@types/node": "^16.10.2",
+    "ts-node-dev": "^1.1.8",
     "typescript": "^4.4.3"
   },
   "engines": {

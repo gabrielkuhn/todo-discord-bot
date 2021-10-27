@@ -13,9 +13,7 @@ const init = async () => {
 
   const commands = new Collection<string, ICommand>()
 
-  const commandFiles = fs
-    .readdirSync(path.resolve(__dirname, 'commands'))
-    .filter(file => file.endsWith('.js'))
+  const commandFiles = fs.readdirSync(path.resolve(__dirname, 'commands'))
 
   for (const file of commandFiles) {
     const command: ICommand = require(`./commands/${file}`).default
