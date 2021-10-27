@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "start": "node -r dotenv/config ./dist/index.js",
-    "dev": "ts-node-dev -r dotenv/config --debug --respawn --transpile-only --exit-child src/index.ts",
+    "dev": "ts-node-dev -r dotenv/config --respawn --transpile-only --exit-child src/index.ts",
     "deploy:dev": "node -r dotenv/config ./dist/scripts/deployCommands.js",
     "deploy:global": "node -r dotenv/config ./dist/scripts/deployGlobalCommands.js"
   },
