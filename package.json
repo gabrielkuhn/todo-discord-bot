@@ -7,11 +7,11 @@
     "build": "tsc",
     "start": "node -r dotenv/config ./dist/index.js",
     "dev": "ts-node-dev -r dotenv/config --respawn --transpile-only --exit-child src/index.ts",
-    "deploy:dev": "node -r dotenv/config ./dist/scripts/deployCommands.js",
-    "deploy:global": "node -r dotenv/config ./dist/scripts/deployGlobalCommands.js"
+    "deploy:dev": "ts-node -r dotenv/config src/scripts/deployCommands.ts",
+    "deploy:global": "ts-node -r dotenv/config src/scripts/deployGlobalCommands.ts"
   },
   "keywords": [],
-  "author": "",
+  "author": "gabrielkuhn",
   "license": "ISC",
   "dependencies": {
     "@discordjs/builders": "^0.6.0",
