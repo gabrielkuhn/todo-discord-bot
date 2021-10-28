@@ -1,21 +1,12 @@
 import { SlashCommandBuilder } from '@discordjs/builders'
 import { MessageEmbed } from 'discord.js'
-import ListModel from '../database/models/ListModel'
 import { ICommand } from '../interfaces/ICommand'
+import { getList } from '../services'
 
 const list: ICommand = {
   data: new SlashCommandBuilder().setName('lista').setDescription('Listinha'),
   run: async interaction => {
-    const list = await ListModel.findOne({
-      discordId: interaction.guild?.id || interaction.user.id,
-    })
-
-    if (!list) {
-      await interaction.reply(
-        'Ainda não tem nenhuma listinha criada nesse canal :('
-      )
-      return
-    }
+    const list = await getList(interaction)
 
     const responseEmbed = new MessageEmbed()
       .setColor('#FDB9FC')

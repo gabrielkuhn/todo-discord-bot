@@ -1,7 +1,8 @@
 import { SlashCommandBuilder } from '@discordjs/builders'
 import { MessageEmbed } from 'discord.js'
-import ListModel, { IListItem } from '../database/models/ListModel'
+import { IListItem } from '../database/models/ListModel'
 import { ICommand } from '../interfaces/ICommand'
+import { getList } from '../services'
 
 const add: ICommand = {
   data: new SlashCommandBuilder()
@@ -14,16 +15,7 @@ const add: ICommand = {
         .setRequired(true)
     ),
   run: async interaction => {
-    const discordId = interaction.guild?.id || interaction.user.id
-
-    let list = await ListModel.findOne({ discordId: discordId })
-
-    if (!list) {
-      list = await ListModel.create({
-        discordId: discordId,
-        listItens: [],
-      })
-    }
+    const list = await getList(interaction)
 
     const listItem: IListItem = {
       item: interaction.options.getString('item', true),
