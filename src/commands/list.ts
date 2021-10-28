@@ -13,13 +13,15 @@ const list: ICommand = {
       .setTitle(`Listinha u.u`)
       .setImage('https://i.imgur.com/MqGBqZs.gif')
       .setDescription(
-        list.listItens
-          .map((listItem, index) =>
-            listItem.finishedAt
-              ? `~~${index + 1}. ${listItem.item}~~ ✓`
-              : `${index + 1}. ${listItem.item}`
-          )
-          .join('\n')
+        list.listItens.length
+          ? list.listItens
+              .map((listItem, index) =>
+                listItem.finishedAt
+                  ? `~~${index + 1}. ${listItem.item}~~ ✓`
+                  : `${index + 1}. ${listItem.item}`
+              )
+              .join('\n')
+          : 'Ainda não tem nenhum item na listinha :(. Você pode utilizar o comando **/adicionar** para incluir o primeiro!'
       )
 
     await interaction.reply({ embeds: [responseEmbed] })
